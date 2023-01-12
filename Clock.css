@@ -1,0 +1,192 @@
+*{ /*Aplica para todo o código*/
+    box-sizing: border-box; /*Quando adicionamos um tamanho é contado o 
+    padding e a borda na soma deste elemento*/
+    font-family: monospace;
+}
+
+body{
+    color: aliceblue; 
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(112, 112, 112), rgb(0, 0, 0));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-size: 2vh;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    align-items: center;
+}
+
+.continuar{
+    margin-top: 20px;
+}
+
+.continuar button{
+    width: 10vw;
+    height: 3vh;
+    margin-top: 2vh;
+    margin-left: -5%;
+    border: none;
+    background-color: rgb(197, 197, 197);
+    border-radius: 5px;
+}
+
+.inputs input{
+    width: 80%;
+    height: 3vh;
+    margin-top: 2vh;
+    border: none;
+    background-color: rgb(197, 197, 197);
+    border-radius: 5px;
+}
+
+.inputs .button{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 3vh;
+}
+
+.inputs .button input{
+    margin-right: 3%;
+    cursor: pointer;
+}
+
+.inputs .button input:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+.inputs .button input:active{
+    opacity: 15%;
+}
+
+.result{
+    display: flex;
+    flex-direction: row;
+    margin-top: -5vh;
+}
+
+h2{
+    margin-top: 8vh;
+   text-align: center;
+}
+
+.clock{
+    width: 200px;
+    height: 200px;
+    margin-top: 5.5vh;
+    margin-left: -12vw;
+    color: black;
+    background-color: rgb(160, 160, 160) ; /*O último parâmetro define a transparencia*/
+    border-radius: 50%;
+    border: 3px solid rgb(224, 224, 224);
+    position: relative; /*O relógio segue o fluxo normal da página 
+    e passa a aceitar top, bottom, left e right  que servem para posicionar o elemento na pag*/
+}
+
+.clock .number{
+    --rotation: 0; /*Por default a rotação é zero*/
+    position: absolute; /*Os números não fazem parte do fluxo do documento, mas
+    sim do elemento pai: o clock*/
+    width: 100%;
+    height: 100%;
+    text-align: center; /*Agr todos os elementos ficam na mesma posição no centro*/
+    /*transform: rotate(30deg); Ele rotaciona o elemento em 30 graus*/
+    transform: rotate(var(--rotation)); /*Como cada número tem que estar posicionado
+    em um certo grau, foi criada uma variavel que será utilizada em cada número específico*/
+}
+
+.clock .number1{ --rotation: 30deg;} /*Está colocando em cada número a sua devida rotação usando a variável*/
+.clock .number2{ --rotation: 60deg;}
+.clock .number3{ --rotation: 90deg;}
+.clock .number4{ --rotation: 120deg;}
+.clock .number5{ --rotation: 150deg;}
+.clock .number6{ --rotation: 180deg;}
+.clock .number7{ --rotation: 210deg;}
+.clock .number8{ --rotation: 240deg;}
+.clock .number9{ --rotation: 270deg;}
+.clock .number10{ --rotation: 300deg;}
+.clock .number11{ --rotation: 330deg;}
+
+.clock .hand{
+    --rotation: 30;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom; /*Permite indicar a posição que deve ser mudada no 
+    transform o elemento, aqui eu deixo fixa a base do ponteiro*/
+    z-index: 10; /*Dá ao elemento uma ordem de sobreposição no HTML*/
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg)); /*Transform movimenta algum elemento. 
+    transleteX define que no eixo das abscissas(X) o elemento será movido 50% em relação
+    ao próprio elemento para o lado. Isso foi feito, pois senão o ponteiro das
+    horas ficava no final do número e não no meio. A variável declarada no final vai ser usada no JS*/
+}
+
+.clock::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11; 
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background-color: rgb(204, 15, 15);
+}
+
+.clock .hand.minute{
+    width: 7px;
+    height: 38%;
+    background-color: rgb(0, 0, 0);
+}
+
+.clock .hand.hour{
+    width: 7px;
+    height: 30%;
+    background-color: rgb(0, 0, 0);
+}
+
+.contagemRegressiva{
+    display: flex;
+    flex-direction: row;
+    color: rgb(21, 34, 30);
+    text-align: center;
+    font: 250vh black calibri;
+}
+
+.contagemRegressiva #years, #months, #days, #hours, #minutes, #seconds{
+    width: 9vw;
+    height: 22vh;
+    margin-top: 9vh;
+    margin-left: 2vh;
+    border-radius: 10px;
+    border-bottom: solid 10.5vh rgb(160, 160, 160) ;
+    background-color: rgba(255, 255, 255);
+}
+
+.contagemRegressiva .escrita{
+    font-size: 2vh;
+    margin-top: -10vh;
+}
+
+.contagemRegressiva .num{
+    font-size: 10vh;
+    margin-top: -7vh;
+}
+
+

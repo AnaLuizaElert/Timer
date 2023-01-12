@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Clock.css">
+    <script defer src="./Clock.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Timer</title>
+</head>
+<body>
+    <main>
+        <div class="inputs">
+            <label>Coloque o dia e a hora que terminará esta contagem regressiva</label>
+            <input type="date" id="date">
+            <input type="setTime" placeholder="Hora:Minuto:Segundo" id="time">
+            <div class="button">
+                <input type="button" value="Iniciar" onclick="start()">
+                <input type="button" value="Parar" onclick="bol = true">
+                <input type="button" value="Reiniciar" onclick="reset(true)">
+            </div>
+            <div class="continuar"></div>
+        </div>
+        <h2>FALTAM ....</h2>
+        <div class="result">
+            <div class="clock">
+                <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+            </div>
+            <div class="contagemRegressiva">
+                <div id="years">
+                   <div class="num" id="numYear"><p>0</p></div>
+                   <div class="escrita"><p>ANOS</p></div>
+                </div>
+                <div id="months">
+                   <div class="num" id="numMonth"><p>0</p></div>
+                   <div class="escrita"><p>MESES</p></div>
+                </div>
+                <div id="days">
+                   <div class="num" id="numDay"><p>0</p></div>
+                   <div class="escrita"><p>DIAS</p></div>
+                </div>
+                <div id="hours">
+                   <div class="num" id="numHour"><p>0</p></div>
+                   <div class="escrita"><p>HORAS</p></div>
+                </div>
+                <div id="minutes">
+                   <div class="num" id="numMinute"><p>0</p></div>
+                   <div class="escrita"><p>MINUTOS</p></div>
+                </div>
+                <div id="seconds">
+                   <div class="num" id="numSecond"><p>0</p></div>
+                   <div class="escrita"><p>SEGUNDOS</p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
