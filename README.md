@@ -3,5 +3,6 @@ It consists of a timer where the exact date and time of the future must be place
 There is also a clock that indicates the actual time. 
 This project was realized in JavaScript, HTML and CSS.
 
-[9f9dd317-75de-441c-977d-81ddba45d8e4.webm](https://user-images.githubusercontent.com/107824361/211951831-75dacd18-4325-4580-bcac-ebf8d4382158.webm)
+[Timer.webm](https://user-images.githubusercontent.com/107824361/211951990-864008b7-d499-46c8-ae4c-02f462c77acd.webm)
+
 
